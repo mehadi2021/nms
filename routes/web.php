@@ -188,7 +188,7 @@ Route::get('/notice',[NoticeController::class,'notice'])->name('user.notice');
 
 Route::get('/scholarship',[SshipController::class,'ship'])->name('user.sship');
  Route::get('/scholarship/application',[SshipController::class,'page'])->name('user.page');
- Route::post('/scholarship/application/store',[ContactController::class,'store'])->name('user.store');
+ Route::post('/scholarship/application/store',[SshipController::class,'store'])->name('user.store');
 
 
 Route::get('/about',[AboutController::class,'about'])->name('user.about');

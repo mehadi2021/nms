@@ -15,15 +15,15 @@
       </div>
       <div class="form-group">
         <label for="name">Contact_Number:</label>
-        <input type="text" class="form-control" required  name="contact" id="name">
+        <input type="text" class="form-control" required  name="contact_number" id="name">
       </div>
       <div class="form-group">
         <label for="list">Institution_Name:</label>
-        <input type="text" class="form-control"  required name="institution" id="name">
+        <input type="text" class="form-control"  required name="institution_name" id="name">
       </div>
       <div class="form-group">
         <label for="list">Scholarship_Type:</label>
-        <input type="text" class="form-control"  required name="scholarship" id="name">
+        <input type="text" class="form-control"  required name="types" id="name">
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
 </form>

@@ -20,7 +20,7 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('scholarship.create')}}">
                 <i class="ni ni-circle-08 text-violet"></i>
-                <span class="nav-link-text">Admin</span>
+                <span class="nav-link-text">Scholarship</span>
               </a>
             </li>
             <li class="nav-item">

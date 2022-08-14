@@ -4,13 +4,15 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Frontend\Book;
+use App\Models\Booklist;
 use Illuminate\Http\Request;
 
 class ABookController extends Controller
 {
     public function Book()
     {
-        return view('frontend.layouts.abook');
+        $books=Booklist::all();
+        return view('frontend.layouts.abook',compact('books'));
 
     }
 
@@ -30,6 +32,3 @@ class ABookController extends Controller
 
 
 }
-
-
-

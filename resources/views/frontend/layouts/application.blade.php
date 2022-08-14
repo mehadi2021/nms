@@ -45,12 +45,14 @@
       </div>
       <div class="row">
         <div class="col-lg-7 mb-4 mb-lg-0">
-            <form action="{{route('user.store')}}" method="post">
+            <form action="{{route('user.store')}}" method="post" enctype="multipart/form-data">
               @csrf
                 <input type="text"  class="form-control mb-3" id="name" name="name" placeholder="Your Name">
             <input type="email" class="form-control mb-3" id="mail" name="email" placeholder="Your Email">
             <input type="text" class="form-control mb-3" id="subject" name="subject" placeholder="Subject">
             <textarea name="message" id="message" class="form-control mb-3" placeholder="Your Message"></textarea>
+            <label>Mark sheet</label>
+             <input type="file" class="form-control mb-3" id="subject" name="photo" placeholder="Subject">
             <button type="submit" value="send" class="btn btn-primary">Submit</button>
           </form>
         </div>

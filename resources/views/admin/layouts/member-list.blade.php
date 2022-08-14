@@ -23,9 +23,6 @@
             @foreach ($members as $key=>$member)
                 <tr>
                     <th>{{$key+1}}</th>
-
-
-                    <th>{{$member->id}}</th>
                     <td>{{$member->name}}</td>
                     <td>{{$member->email}}</td>
                     <td>{{$member->address}}</td>

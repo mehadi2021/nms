@@ -45,16 +45,47 @@
       </div>
       <div class="row">
         <div class="col-lg-7 mb-4 mb-lg-0">
+
             <form action="{{route('user.abook.store')}}" method="post">
+
               @csrf
+
+
                 <input type="text"  class="form-control mb-3" id="name" name="name" placeholder="Name">
             <input type="email" class="form-control mb-3" id="mail" name="email" placeholder="Email">
-            <input type="text" class="form-control mb-3" id="subject" name="book_name" placeholder="Book_Name">
-            <input type="text" class="form-control mb-3" id="subject" name="writer" placeholder="Writer">
+            {{-- <input type="text" class="form-control mb-3" id="subject" name="book_name" placeholder="Book_Name"> --}}
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Book Name</label>
+
+                <select name="book_name" class="form-control mb-3" id="exampleFormControlSelect1">
+                     <option value="NULL">Select form here</option>
+                        @foreach ($books as $book)
+                  <option value="{{ $book->book_name }}">{{ $book->writer }}</option>
+                          @endforeach
+                </select>
+
+              </div>
+
+
+            {{-- <input type="text" class="form-control mb-3" id="subject" name="writer" placeholder="Writer"> --}}
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Writer Name</label>
+
+                <select name="writer" class="form-control" id="exampleFormControlSelect1">
+                     <option value="NULL">Select form here</option>
+                        @foreach ($books as $book)
+                  <option value="{{ $book->writer }}">{{ $book->writer }}</option>
+                          @endforeach
+                </select>
+
+              </div>
+
 
             <button type="submit" value="send" class="btn btn-primary">Submit</button>
+
           </form>
         </div>
+
 
       </div>
     </div>

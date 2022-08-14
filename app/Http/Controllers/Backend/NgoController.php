@@ -16,15 +16,16 @@ class NgoController extends Controller
 
    public function store(Request $request)
    {
-    //    dd($request->all());
+       //dd($request->all());
            Scholarship::create([
           'name'=>$request->name,
           'address'=>$request->address,
-          'contact'=>$request->contact,
-          'institution'=>$request->institution,
-          'scholarship'=>$request->scholarship,
+          'contact_number'=>$request->contact_number,
+          'institution_name'=>$request->institution_name,
+          'types'=>$request->types,
 
 
       ]);
+      return redirect()->back();
     }
 }

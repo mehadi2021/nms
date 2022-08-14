@@ -54,8 +54,13 @@
       <div class="row justify-content-center">
         <!-- scholarship item -->
 
+  @foreach ($mm as $m)
+
         <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
-            <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0"><span class="h2 d-block">23</span> APR,2021</div>
+            <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0">
+
+                <span class="h2 d-block">{{ $m->types }}23</span> APR,2021</div>
+
             <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
               <a href="notice-single.html" class="h4 mb-3 d-block">
 
@@ -64,40 +69,13 @@
 
 
               </p>
+
             </div>
             <div class="d-md-table-cell text-right pr-0 pr-md-4"><a href="{{route('user.page')}}" class="btn btn-primary">Apply Now</a></div>
           </li>
-
+  @endforeach
         <!-- scholarship item -->
 
-
-        <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
-            <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0"><span class="h2 d-block">23</span> APR,2021</div>
-            <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
-              <a href="notice-single.html" class="h4 mb-3 d-block">
-
-              </a>
-              <p class="mb-0">
-
-              </p>
-            </div>
-            <div class="d-md-table-cell text-right pr-0 pr-md-4"><a href="notice-single.html" class="btn btn-primary">Apply Now</a></div>
-          </li>
-        <!-- scholarship item -->
-
-        <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
-            <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0"><span class="h2 d-block">23</span> APR,2021</div>
-            <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
-              <a href="notice-single.html" class="h4 mb-3 d-block">
-
-              </a>
-              <p class="mb-0">
-
-
-              </p>
-            </div>
-            <div class="d-md-table-cell text-right pr-0 pr-md-4"><a href="notice-single.html" class="btn btn-primary">Apply Now</a></div>
-          </li>
 
 
       </div>

@@ -19,6 +19,7 @@ class CreateApplicationsTable extends Migration
             $table->string('email');
             $table->string('subject');
             $table->string('message');
+            $table->string('photo');
             $table->timestamps();
         });
     }
