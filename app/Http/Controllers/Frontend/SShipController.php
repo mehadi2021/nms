@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Frontend\Auth;
 use App\Models\Frontend\Application;
 use App\Models\Scholarship;
 use Illuminate\Http\Request;
@@ -45,4 +46,12 @@ class SShipController extends Controller
       return redirect()->back()->with('msg','Thanks for your Application.');
     }
 
-}
+
+
+     public function applydetails()
+      {
+        $id=Auth()->user()->name;
+         $data=Application::where('name',$id)->get();
+         return view('frontend.layouts.detailsapply',compact('data'));
+     }
+    }

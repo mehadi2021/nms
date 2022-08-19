@@ -46,12 +46,12 @@
                   <i class="ni ni-circle-08 text-red"></i>
                   <span class="nav-link-text">Donor Histery</span>
               </li>
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="{{route('admin.member.add')}}">
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.scholarshippview')}}">
                     <i class="ni ni-circle-08 text-green"></i>
-                  <span class="nav-link-text">New Donor</span>
+                  <span class="nav-link-text">Apply Scholarview</span>
                 </a>
-              </li> --}}
+              </li>
 
 
             <li class="nav-item">

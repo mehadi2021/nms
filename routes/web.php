@@ -118,6 +118,16 @@ Route::put('/note/edit/{id}',[NoteController::class,'update'])->name('admin.layo
 
 Route::get('/scholarshipp',[ScholarshipController::class,'scholarshipp'])->name('admin.scholarshipp.create');
 Route::post('/scholarshipp/store',[ScholarshipController::class,'store'])->name('admin.scholarshipp.store');
+Route::get('/scholarshipp/applyscholar',[ScholarshipController::class,'apply'])->name('admin.scholarshippview');
+Route::get('/scholarshipp/applyscholar/delete/{id}',[ScholarshipController::class,'deleteapply'])->name('deleteapply');
+
+
+
+
+ Route::get('/scholarshipp/applyscholaraction/approve/{id}',[ScholarshipController::class,'apply_approve'])->name('admin.loan.approve');
+    Route::get('/scholarshipp/applyscholaraction/cancel/{id}',[ScholarshipController::class,'apply_cancel'])->name('admin.loan.cancel');
+     Route::get('/scholarshipp/applyscholar/action/view/{id}',[ScholarshipController::class,'apply_details'])->name('admin.loan.request.details');
+
 
 //approve
 
@@ -187,6 +197,7 @@ Route::get('/notice',[NoticeController::class,'notice'])->name('user.notice');
 
 
 Route::get('/scholarship',[SshipController::class,'ship'])->name('user.sship');
+Route::get('/scholarshipview',[SshipController::class,'applydetails'])->name('user.sshipview');
  Route::get('/scholarship/application',[SshipController::class,'page'])->name('user.page');
  Route::post('/scholarship/application/store',[SshipController::class,'store'])->name('user.store');
 

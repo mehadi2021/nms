@@ -15,6 +15,7 @@
 
               <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{route('user.notice')}}">notice</a></li>
               <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{route('user.sship')}}">SCHOLARSHIP</a></li>
+             <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{route('user.sshipview')}}">SCHOLARSHIP VIEW</a></li>
                <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="">{{ auth()->user()->name }}</a></li>
                <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{route('user.profile',auth()->User()->id)}}">Profile</a>
                  <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{route('user.logout')}}">Logout</a></li>

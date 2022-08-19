@@ -20,6 +20,7 @@ class CreateApplicationsTable extends Migration
             $table->string('subject');
             $table->string('message');
             $table->string('photo');
+             $table->string('status')->default('In Process');
             $table->timestamps();
         });
     }
