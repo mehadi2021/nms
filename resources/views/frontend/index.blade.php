@@ -39,8 +39,8 @@
 
 <!-- header -->
 
-@include('frontend.partials.header')
 
+@include('frontend.partials.header')
 <!-- /header -->
 <!-- Modal -->
 
@@ -76,90 +76,13 @@
     </div>
 </div>
 
-<!-- hero slider -->
-<section class="hero-section overlay bg-cover" data-background="{{url('/frontend/images/banner/banner-1.jpg')}}">
-  <div class="container">
-    <div class="hero-slider">
-      <!-- slider item -->
-      <div class="hero-slider-item">
-        <div class="row">
-          <div class="col-md-8">
-            <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">Your bright future is our mission</h1>
+<div style="margin-top:180px;">
+@yield('content')
+</div>
 
-            <a href="{{route('user.donation')}}" class="btn btn-primary" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Apply For Donation</a>
-          </div>
-        </div>
-      </div>
-      <!-- slider item -->
-      <div class="hero-slider-item">
-        <div class="row">
-          <div class="col-md-8">
-            <h1 class="text-white" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">Your bright future is our mission</h1>
-
-            <a href="{{route('user.loan')}}" class="btn btn-primary" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".7">Apply For Loan</a>
-          </div>
-        </div>
-      </div>
-      <!-- slider item -->
-      <div class="hero-slider-item">
-        <div class="row">
-          <div class="col-md-8">
-            <h1 class="text-white" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">Your bright future is our mission</h1>
-
-            <a href="{{route('user.abook')}}" class="btn btn-primary" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="zoomIn" data-delay-in=".7">Apply For Book</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- /hero slider -->
-
-<!-- banner-feature -->
-
-{{-- @include('frontend.layouts.sship') --}}
-
-<!-- /banner-feature -->
-
-<!-- about us -->
-
-<!-- /about us -->
-
-<!-- courses -->
-
-<!-- /courses -->
-
-<!-- cta -->
-<section class="section bg-primary">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h6 class="text-white font-secondary mb-0"></h6>
-        <h2 class="section-title text-white"></h2>
-        <li class="list-inline-item"><a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#mehadi">Donate Here</a></li>
-        {{-- <a href="{{route('user.donate')}}" class="btn btn-secondary">Donate Here</a> --}}
-      </div>
-    </div>
-  </div>
-</section>
-<!-- /cta -->
 
 <!-- success story -->
-<section class="section bg-cover" data-background="{{url('/frontend/images/backgrounds/success-story.jpg')}}">
+{{-- <section class="section bg-cover" data-background="{{url('/frontend/images/backgrounds/success-story.jpg')}}">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-sm-4 position-relative success-video">
@@ -175,34 +98,12 @@
       </div>
     </div>
   </div>
-</section>
-<!-- /success story -->
+</section> --}}
 
-<!-- events -->
-
-{{-- @include('frontend.layouts.event') --}}
-
-<!-- /events -->
-
-<!-- teachers -->
-{{-- @include('frontend.partials.donor') --}}
-
-
-<!-- /teachers -->
-
-<!-- blog -->
-
-{{-- @include('frontend.partials.blog') --}}
-
-<!-- /blog -->
-
-<!-- footer -->
 
 @include('frontend.partials.footer')
 
-<!-- /footer -->
 
-<!-- jQuery -->
 <script src="{{url('/frontend/plugins/jQuery/jquery.min.js')}}"></script>
 <!-- Bootstrap JS -->
 <script src="{{url('/frontend/plugins/bootstrap/bootstrap.min.js')}}"></script>

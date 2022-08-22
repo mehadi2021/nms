@@ -1,4 +1,6 @@
-<h1>Information Details</h1>
+@extends('frontend.index')
+@section('content')
+<h5 style="text-align: center;">Information Details</h5>
 <br>
 <br>
 <table class="table table-success table-striped ">
@@ -24,7 +26,8 @@
                 <td>{{$datas->message}}</td>
                 <td>{{$datas->status}}</td>
             </tr>
+  </tbody>
 @endforeach
-
+@endsection
 
 

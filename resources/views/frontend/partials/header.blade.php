@@ -14,7 +14,6 @@
             <ul class="list-inline">
 
               <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{route('user.notice')}}">notice</a></li>
-              <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{route('user.sship')}}">SCHOLARSHIP</a></li>
              <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{route('user.sshipview')}}">SCHOLARSHIP VIEW</a></li>
                <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="">{{ auth()->user()->name }}</a></li>
                <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{route('user.profile',auth()->User()->id)}}">Profile</a>
@@ -43,7 +42,7 @@
           <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto text-center">
               <li class="nav-item active">
-                <a class="nav-link" href="{{route('user.board')}}">Home</a>
+                <a class="nav-link" href="{{route('user')}}">Home</a>
               </li>
               <li class="nav-item @@about">
                 <a class="nav-link" href="{{route('user.about')}}">About</a>
@@ -61,7 +60,9 @@
           </div>
         </nav>
       </div>
+
     </div>
+
   </header>
 
 

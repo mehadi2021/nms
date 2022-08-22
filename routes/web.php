@@ -20,6 +20,7 @@ use App\Http\Controllers\Frontend\DonateController;
 use App\Http\Controllers\Frontend\MDHController;
 use App\Http\Controllers\Frontend\DonationController;
 use App\Http\Controllers\Frontend\LoanController;
+use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\ABookController;
 use App\Http\Controllers\Backend\ConController;
 use App\Http\Controllers\Backend\AFLController;
@@ -164,14 +165,12 @@ Route::post('/login',[UserController::class,'login'])->name('user.login');
 Route::get('/', function () {
     return redirect()->route('user');
  });
- Route::get('/user', function () {
-    return view('frontend.index');
-})->name('user');
+
 
 
 Route::group(['prefix'=>'user-portal','middleware'=>['user']],function(){
 
-
+Route::get('/',[IndexController::class,'home'])->name('user');
 
 Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
 

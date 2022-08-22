@@ -1,22 +1,11 @@
-<footer>
-    <!-- newsletter -->
-    <div class="newsletter">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
-            <h3 class="text-white">Subscribe Now</h3>
-            <form action="#">
-              <div class="input-wrapper">
-                <input type="email" class="form-control border-0" id="newsletter" name="newsletter" placeholder="Enter Your Email...">
-                <button type="submit" value="send" class="btn btn-primary">Join</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- footer content -->
+<footer style="position: fixed;left:0;bottom:0;text-align:center;width:100%;background-color:orange;color:black;">
 
-    <!-- copyright -->
+
+
+        <H7 style="text-align: center;">Copy-2021 Angles Arms.All Rights Reseved</H7>
+         <H7 style="text-align: center;">Made by Nusrat Jahan ID-172030</H7>
+
+
+
 
   </footer>
