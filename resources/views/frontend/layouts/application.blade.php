@@ -51,7 +51,7 @@
             <input type="email" class="form-control mb-3" id="mail" name="email" placeholder="Your Email">
             <input type="text" class="form-control mb-3" id="subject" name="subject" placeholder="Subject">
             <textarea name="message" id="message" class="form-control mb-3" placeholder="Your Message"></textarea>
-            <label>Mark sheet</label>
+            <label>Document</label>
              <input type="file" class="form-control mb-3" id="subject" name="photo" placeholder="Subject">
             <button type="submit" value="send" class="btn btn-primary">Submit</button>
           </form>

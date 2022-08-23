@@ -1,3 +1,6 @@
+
+@extends('frontend.index')
+@section('content')
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -81,3 +84,4 @@
 
                         </body>
                         </html>
+                        @endsection

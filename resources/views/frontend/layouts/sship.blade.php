@@ -1,3 +1,5 @@
+@extends('frontend.index')
+@section('content')
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -37,11 +39,11 @@
 <section class="section">
     <div class="container">
       <div class="row mb-5">
-        <div class="col-md-6 mb-4 mb-md-0">
+        <div class="col-md-4 mb-4 mb-md-0">
           <img class="img-fluid" src="{{url('frontend/images/scholarship/scholarship.jpg')}}" alt="scholarship news">
         </div>
-        <div class="col-md-6">
-          <h2>SCHOLARSHIPS NEWS</h2>
+        <div class="col-md-8">
+          <h2 style="margin-left:190px;">SCHOLARSHIPS NEWS</h2>
           <strong class="mb-4 d-block"><i>
 
 
@@ -59,7 +61,7 @@
         <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
             <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0">
 
-                <span class="h2 d-block">{{ $m->types }}23</span> APR,2021</div>
+                <span class="h3 d-block">{{ $m->types }}</span></div>
 
             <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
               <a href="notice-single.html" class="h4 mb-3 d-block">
@@ -103,3 +105,4 @@
 
   </body>
   </html>
+  @endsection

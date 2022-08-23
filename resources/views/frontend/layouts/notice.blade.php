@@ -11,24 +11,18 @@
   <thead>
     <tr>
         <th scope="col">SL</th>
-     <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Subject</th>
-      <th scope="col">Message</th>
-      <th scope="col">Status</th>
+     <th style="text-align: center;">Notice</th>
+
 
 
     </tr>
   </thead>
   <tbody>
-@foreach ($data as $key=>$datas )
+@foreach ($notices as $key=>$datas )
             <tr>
             <th >{{$key+1}}</th>
-                <td>{{$datas->name}}</td>
-                <td>{{$datas->email}}</td>
-                <td>{{$datas->subject}}</td>
-                <td>{{$datas->message}}</td>
-                <td>{{$datas->status}}</td>
+                <td style="text-align: center;">{{$datas->notice}}</td>
+
             </tr>
   </tbody>
 @endforeach
@@ -43,14 +37,3 @@
 
 
 
-
-
-
-
-
-<h1>{{ $not->notice }}</h1>
-
-@endforeach
-
-
-  @endsection

@@ -166,11 +166,11 @@ Route::get('/', function () {
     return redirect()->route('user');
  });
 
+Route::get('/',[IndexController::class,'home'])->name('user');
 
 
 Route::group(['prefix'=>'user-portal','middleware'=>['user']],function(){
 
-Route::get('/',[IndexController::class,'home'])->name('user');
 
 Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
 
@@ -217,7 +217,7 @@ Route::get('/abook',[ABookController::class,'book'])->name('user.abook');
 Route::post('/abook',[ABookController::class,'store'])->name('user.abook.store');
 
 
-Route::get('/ourWork',[HomeController::class,'ourWork'])->name('user.ourWork');
+Route::get('/apply-details',[HomeController::class,'ourWork'])->name('user.ourWork');
 
 Route::get('/ourWork/bookSector',[HomeController::class,'bookSector'])->name('user.bookSector');
 

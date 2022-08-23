@@ -1,3 +1,5 @@
+@extends('frontend.index')
+@section('content')
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -35,11 +37,12 @@
 
 
 <section class="section">
-<h2>Our Work</h2>
-
+<h2 style="text-align: center;">Our Work</h2>
+<br>
 <a class="btn btn-warning" href="{{route('user.bookSector')}}">Book Sector</a>
 <a class="btn btn-warning" href="{{route('user.donationSector')}}">Donation Sector</a>
 <a class="btn btn-warning" href="{{route('user.loanSector')}}">Loan Sector</a>
+<a class="btn btn-warning" href="{{route('user.sshipview')}}">Scholarship Section</a>
 
 </section>
 
@@ -64,3 +67,4 @@
 
   </body>
   </html>
+@endsection
