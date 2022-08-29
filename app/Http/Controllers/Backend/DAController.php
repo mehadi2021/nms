@@ -35,4 +35,34 @@ class DAController extends Controller
         ]);
         return redirect()->back();
     }
+
+     public function deleteapply($id)
+    {
+         //dd($id);
+
+        $apply = Here::find($id);
+        $apply->delete();
+        return redirect()->route('admin.donar.list')->with('success', 'Book deleted successfully');
+    }
+
+
+
+
+  public function apply_approve($id)
+      {
+         $data=Here::find($id);
+         $data->status='Approve';
+         $data->save();
+         return redirect()->back()->with('success','Apply approve successful');
+     }
+
+      public function apply_cancel($id)
+      {
+         $data=Here::find($id);
+         $data->status='Reject';
+         $data->save();
+         return redirect()->back()->with('success','Apply Reject!!');
+     }
+
+
 }

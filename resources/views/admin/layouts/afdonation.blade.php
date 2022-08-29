@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('content')
-<h2>Donation Application</h2>
+<h2>Donation Application Details</h2>
 <p style="text-align: left;">
 
 </p>
@@ -21,6 +21,8 @@
       <th scope="col">Address</th>
       <th scope="col">Amount</th>
       <th scope="col">Description</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
 
     </tr>
   </thead>
@@ -40,9 +42,27 @@
                 <td>{{$contact->address}}</td>
                 <td>{{$contact->amount}}</td>
                 <td>{{$contact->description}}</td>
+                <td>{{$contact->status}}</td>
+   <td>
+                    @if($contact->status =='Pending')
+         <div class="btn-group">
+                <button type="button" class="btn btn-theme dropdown-toggle" data-toggle="dropdown">
+                  Check<span class="caret"></span>
+                  </button>
+                <ul class="dropdown-menu" style="min-width:95px;" role="menu">
+                  <li><a href="{{ route('admin.donation.applyapprove',$contact->id) }}">Approve</a></li>
+                   <li><a href="{{route('admin.donationcancel',$contact->id)}}">Cancel</a></li>
+                </ul>
+              </div>
+
+             @else
+              {{-- <a button class="btn btn-success btn-xs" href="{{ route('admin.loan.request.details',$list->member_id) }}"><i class=" fa fa-check"></i></a></button> --}}
+                <a button type="button" class=" btn btn-danger" href="{{route('deletedonation', $contact->id)}}" >Delete</a>       </td>
+        @endif
+
 
             </tr>
-        @endforeach
+        @endforeach</td>
   </tbody>
 </table>
 

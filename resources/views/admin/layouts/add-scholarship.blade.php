@@ -1,7 +1,8 @@
 @extends('admin.master')
 @section('content')
 
-
+<h2>Scholarship Add</h2>
+<br>
 
 <form action="{{route('scholarship.store')}}"method="post">
     @csrf

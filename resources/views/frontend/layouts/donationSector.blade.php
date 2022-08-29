@@ -33,10 +33,16 @@
   <link rel="icon" href="{{('frontend/images/favicon.png')}}" type="image/x-icon">
 
 </head>
+<section class="section" style="text-align: center;">
+<a class="btn btn-warning" href="{{route('user.bookSector')}}">Book Sector</a>
+<a class="btn btn-warning" href="{{route('user.donationSector')}}">Donation Sector</a>
+<a class="btn btn-warning" href="{{route('user.loanSector')}}">Loan Sector</a>
+<a class="btn btn-warning" href="{{route('user.sshipview')}}">Scholarship Section</a>
+<a class="btn btn-warning" href="{{ route('user.donateSector') }}">Donate Section</a>
 
-
-
-<section class="section">
+<br>
+<br>
+<br>
 <h2>Donation History</h2>
 <p style="text-align: left;">
 
@@ -48,8 +54,15 @@
      <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
-      <th scope="col">Occupation</th>
+      <th scope="col">occupation</th>
+      <th scope="col">father_name</th>
+      <th scope="col">father_occupation</th>
+      <th scope="col">mother_name</th>
+      <th scope="col">mother_occupation</th>
+      <th scope="col">family_member</th>
       <th scope="col">Amount</th>
+      <th scope="col">Description</th>
+       <th scope="col">Status</th>
 
          </tr>
   </thead>
@@ -65,7 +78,15 @@
         <td>{{$donation->email}}</td>
         <td>{{$donation->phone}}</td>
         <td>{{$donation->occupation}}</td>
+        <td>{{$donation->father_name}}</td>
+        <td>{{$donation->father_occupation}}</td>
+        <td>{{$donation->mother_name}}</td>
+        <td>{{$donation->mother_occupation}}</td>
+        <td>{{$donation->number_of_family_member}}</td>
         <td>{{$donation->amount}}</td>
+        <td>{{$donation->description}}</td>
+        <td>{{$donation->status}}</td>
+
         </tr>
 
         @php

@@ -38,12 +38,18 @@ class HomeController extends Controller
 
     public function donationSector()
     {
-        $donations = Here::all();
+        $donations =Donation::all();
     return view('frontend.layouts.donationSector', compact('donations'));
     }
     public function loanSector()
     {
         $loans = Loan::all();
     return view('frontend.layouts.loanSector', compact('loans'));
+    }
+     public function donateSector()
+
+   {
+        $donates = Here::all();
+    return view('frontend.layouts.donateSector', compact('donates'));
     }
 }

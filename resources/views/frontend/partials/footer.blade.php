@@ -2,7 +2,7 @@
 
 
 
-        <H7 style="text-align: center;">Copy-2021 Angles Arms.All Rights Reseved</H7>
+        <H7 style="text-align: center;">Copy-2022 Angles Arms.All Rights Reseved</H7>
          <H7 style="text-align: center;">Made by Nusrat Jahan ID-17203084</H7>
 
 

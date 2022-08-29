@@ -86,6 +86,18 @@ Route::get('/amount',[DAController::class,'amount'])->name('admin.amount');
 
 Route::get('/adonation',[AFDController::class,'adonation'])->name('admin.adonation');
 
+Route::get('/adonation/delete/{id}',[AFDController::class,'deleteapply'])->name('deletedonation');
+
+
+
+
+ Route::get('/adonation/approve/{id}',[AFDController::class,'apply_approve'])->name('admin.donation.applyapprove');
+    Route::get('/adonation/cancel/{id}',[AFDController::class,'apply_cancel'])->name('admin.donationcancel');
+
+
+
+
+
 //loan
 
 Route::get('/loan',[AFLController::class,'loan'])->name('admin.loan');
@@ -166,6 +178,16 @@ Route::get('/member/form',[MemberController::class,'create'])->name('admin.membe
 Route::post('/member/store',[MemberController::class,'store'])->name('admin.member.store');
 Route::get('/member/list',[MemberController::class,'list'])->name('admin.member.list');
 Route::get('/donar/list',[MDHController::class,'donarList'])->name('admin.donar.list');
+
+Route::get('/donar/list/delete/{id}',[DAController::class,'deleteapply'])->name('deletedonar');
+
+
+
+
+ Route::get('/donar/list/approve/{id}',[DAController::class,'apply_approve'])->name('admin.donar.approve');
+    Route::get('/donar/list/cancel/{id}',[DAController::class,'apply_cancel'])->name('admin.donar.cancel');
+     Route::get('/donar/list/action/view/{id}',[DAController::class,'apply_details'])->name('admin.donar.request.details');
+
 
 // Route::get('/member/add',[MemberController::class,'add'])->name('admin.member.add');
 // Route::post('/member/add',[MemberController::class,'add/store'])->name('admin.member.store');
@@ -249,6 +271,7 @@ Route::get('/ourWork/bookSector/{file}',[HomeController::class,'download'])->nam
 Route::get('/ourWork/donationSector',[HomeController::class,'donationSector'])->name('user.donationSector');
 
 Route::get('/ourWork/loanSector',[HomeController::class,'loanSector'])->name('user.loanSector');
+Route::get('/ourWork/donateSector',[HomeController::class,'donateSector'])->name('user.donateSector');
 
 
 

@@ -27,6 +27,7 @@ class CreateDonationsTable extends Migration
             $table->string('address');
             $table->string('amount');
             $table->string('description');
+            $table->string('status')->default('Pending');
             $table->timestamps();
         });
     }

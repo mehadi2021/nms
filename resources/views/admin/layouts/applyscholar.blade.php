@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('content')
-<h2>Apply Scholarship View</h2>
+<h2> Scholarship Application Details</h2>
 <p style="text-align: left;">
 
 </p>

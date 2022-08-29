@@ -44,7 +44,7 @@
 
 <br>
 <br>
-<h2>Loan History</h2>
+<h2>Donate History</h2>
 <p style="text-align: left;">
 
 </p>
@@ -53,10 +53,14 @@
     <tr>
         <th scope="col">SL</th>
      <th scope="col">Name</th>
-      <th scope="col">N_ID</th>
-      <th scope="col">Department</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
       <th scope="col">Amount</th>
+      <th scope="col">Transaction Id</th>
+      <th scope="col">Payment Method</th>
+      <th scope="col">Type</th>
       <th scope="col">Status</th>
+       <th scope="col">Total Amount</th>
 
          </tr>
   </thead>
@@ -65,18 +69,22 @@
   @endphp
   <tbody>
 
-        @foreach ($loans as $key=>$loan)
+        @foreach ($donates as $key=>$donate)
         <tr>
         <th >{{$key+1}}</th>
-        <td>{{$loan->name}}</td>
-        <td>{{$loan->nid_no}}</td>
-        <td>{{$loan->department}}</td>
-        <td>{{$loan->amount}}</td>
-        <td>{{$loan->status}}</td>
+        <td>{{$donate->name}}</td>
+        <td>{{$donate->email}}</td>
+        <td>{{$donate->phone}}</td>
+        <td>{{$donate->amount}}</td>
+        <td>{{$donate->transaction_id}}</td>
+        <td>{{$donate->payment_method}}</td>
+        <td>{{$donate->type}}</td>
+        <td>{{$donate->status}}</td>
+        <td>{{$donate->total_amount}}</td>
         </tr>
 
         @php
-        $total = $total + $loan->amount;
+        $total = $total + $donate->amount;
     @endphp
 
     @endforeach

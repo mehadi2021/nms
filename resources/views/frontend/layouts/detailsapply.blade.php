@@ -1,6 +1,16 @@
 @extends('frontend.index')
 @section('content')
-<h5 style="text-align: center;">Information Details</h5>
+<section class="section" style="text-align: center;">
+<a class="btn btn-warning" href="{{route('user.bookSector')}}">Book Sector</a>
+<a class="btn btn-warning" href="{{route('user.donationSector')}}">Donation Sector</a>
+<a class="btn btn-warning" href="{{route('user.loanSector')}}">Loan Sector</a>
+<a class="btn btn-warning" href="{{route('user.sshipview')}}">Scholarship Section</a>
+<a class="btn btn-warning" href="{{ route('user.donateSector') }}">Donate Section</a>
+
+<br>
+<br>
+<br>
+<h2 style="text-align: center;">Scholarship Details</h2>
 <br>
 <br>
 <table class="table table-success table-striped ">

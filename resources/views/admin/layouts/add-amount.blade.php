@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('content')
-<h2>Donation History</h2>
+<h2>Donation Amount History</h2>
 <p style="text-align: left;">
 
 </p>

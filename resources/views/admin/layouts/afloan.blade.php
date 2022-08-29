@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('content')
-<h2>Donation Application</h2>
+<h2>Loan Application Details</h2>
 <p style="text-align: left;">
 
 </p>

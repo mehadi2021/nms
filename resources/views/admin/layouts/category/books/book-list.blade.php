@@ -11,9 +11,8 @@
   </button></a><br>
 <br>
 
-<form action="{{route('allBook')}}" method="post" enctype="multipart/form-data">
-    @method('put')
-    @csrf
+<form action="{{route('allBook')}}" method="get" enctype="multipart/form-data">
+
 <div class="input-group rounded mt-3 mb-2">
   <div class="form-outline">
     {{-- <input value="{{$key}}" type="text" placeholder="Search" name="search" class="form-control"> --}}

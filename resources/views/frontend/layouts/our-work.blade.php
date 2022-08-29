@@ -36,13 +36,14 @@
 
 
 
-<section class="section">
+<section class="section" style="text-align: center;">
 <h2 style="text-align: center;">Our Work</h2>
 <br>
 <a class="btn btn-warning" href="{{route('user.bookSector')}}">Book Sector</a>
 <a class="btn btn-warning" href="{{route('user.donationSector')}}">Donation Sector</a>
 <a class="btn btn-warning" href="{{route('user.loanSector')}}">Loan Sector</a>
 <a class="btn btn-warning" href="{{route('user.sshipview')}}">Scholarship Section</a>
+<a class="btn btn-warning" href="{{ route('user.donateSector') }}">Donate Section</a>
 
 </section>
 
