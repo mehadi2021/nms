@@ -21,6 +21,7 @@
       <th scope="col">Amount</th>
       <th scope="col">Cause</th>
       <th scope="col">Status</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -39,8 +40,27 @@
                 <td>{{$contact->amount}}</td>
                 <td>{{$contact->cause}}</td>
                 <td>{{$contact->status}}</td>
+                <td>
+                    @if($contact->status =='Pending')
+         <div class="btn-group">
+                <button type="button" class="btn btn-theme dropdown-toggle" data-toggle="dropdown">
+                  Check<span class="caret"></span>
+                  </button>
+                <ul class="dropdown-menu" style="min-width:95px;" role="menu">
+                  <li><a href="{{ route('admin.loan.applyapprove',$contact->id) }}">Approve</a></li>
+                   <li><a href="{{route('admin.loancancel',$contact->id)}}">Cancel</a></li>
+                </ul>
+              </div>
+
+             @else
+              {{-- <a button class="btn btn-success btn-xs" href="{{ route('admin.loan.request.details',$list->member_id) }}"><i class=" fa fa-check"></i></a></button> --}}
+                <a button type="button" class=" btn btn-danger" href="{{route('deleteloan', $contact->id)}}" >Delete</a>       </td>
+        @endif
+
+
             </tr>
-        @endforeach
+        @endforeach</td>
+
   </tbody>
 </table>
 

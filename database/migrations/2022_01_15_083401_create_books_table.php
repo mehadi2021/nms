@@ -17,8 +17,11 @@ class CreateBooksTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->string('book_name');
+            $table->string('booklist_id');
             $table->string('writer');
+            $table->string('method');
+            $table->string('transaction');
+            $table->string('status')->default('In Process');
             $table->timestamps();
         });
     }

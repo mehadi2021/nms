@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Frontend\Book;
 
 class Booklist extends Model
 {
@@ -11,6 +12,8 @@ class Booklist extends Model
 
     // protected $fillable=['book_id','book_title','category','available_books','image_path'];
     protected $guarded=[];
+
+   
 
 
 

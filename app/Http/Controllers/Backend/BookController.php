@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booklist;
+use App\Models\Frontend\Book;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -32,21 +33,21 @@ class BookController extends Controller
     {
 
         // dd($request->all());
+          $file_name='';
+        //step 1: check image exist in this request.
+         if($request->hasFile('file'))
+         {
+             // step 2: generate file name
+             $file_name=date('Ymdhms') .'.'. $request->file('file')->getClientOriginalExtension();
+             //step 3 : store into project directory
+
+             $request->file('file')->storeAs('/uploads',$file_name);
+
+      }
 
 
-        $file_name='';
                 //step 1: check image exist in this request.
-                 if($request->hasFile('file'))
-                 {
-                     // step 2: generate file name
-                     $file_name=date('Ymdhms') .'.'. $request->file('file')->getClientOriginalExtension();
-                     //step 3 : store into project directory
-
-                     $request->file('file')->storeAs('/uploads',$file_name);
-
-              }
-
-        Booklist::create([
+                           Booklist::create([
             'book_name' => $request->book_name,
             'category' => $request->category,
             'writer' => $request->writer,
@@ -54,6 +55,11 @@ class BookController extends Controller
             'price' =>$request->price,
 
         ]);
+
+
+
+
+
         return redirect()->route('allBook')->with('success', 'Book created successfully');;
     }
     public function updateBook(Request $request, $id)
@@ -125,5 +131,40 @@ class BookController extends Controller
 
 
 //     }
+
+
+ public function deleteapply($id)
+    {
+        // dd($id);
+
+        $apply = Book::find($id);
+        $apply->delete();
+        return redirect()->route('admin.scholarshippview')->with('success', 'Book deleted successfully');
+    }
+
+
+
+
+  public function apply_approve($id)
+      {
+         $data=Book::find($id);
+         $data->status='Approve';
+         $data->save();
+         return redirect()->back()->with('success','Apply approve successful');
+     }
+
+      public function apply_cancel($id)
+      {
+         $data=Book::find($id);
+         $data->status='Reject';
+         $data->save();
+         return redirect()->back()->with('success','Apply Reject!!');
+     }
+       public function apply_details($id)
+      {
+         $data=Application::find($id);
+         return view('admin.layouts.detailsapply',compact('data'));
+     }
+
 
 }

@@ -56,8 +56,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('admin/login',[LoginController::class,'login'])->name('admin.login');
     Route::post('admin/do/login',[LoginController::class,'doLogin'])->name('admin.do.login');
 
-    Route::group(['prefix'=>'admin-portal'],function(){
-Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
+Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function(){
     Route::get('/', function () {
         return view('admin.partials.dash');
     })->name('admin');
@@ -90,6 +89,16 @@ Route::get('/adonation',[AFDController::class,'adonation'])->name('admin.adonati
 //loan
 
 Route::get('/loan',[AFLController::class,'loan'])->name('admin.loan');
+Route::get('/loan/delete/{id}',[AFLController::class,'deleteapply'])->name('deleteloan');
+
+
+
+
+ Route::get('/loan/approve/{id}',[AFLController::class,'apply_approve'])->name('admin.loan.applyapprove');
+    Route::get('/loan/cancel/{id}',[AFLController::class,'apply_cancel'])->name('admin.loancancel');
+     Route::get('/loan/action/view/{id}',[AFLController::class,'apply_details'])->name('admin.loan.details');
+
+
 
 //book
 
@@ -103,6 +112,21 @@ Route::post('/book/add',[BookController::class,'addBook'])->name('addBook');
 Route::put('/book/update/{id}',[BookController::class,'updateBook'])->name('updateBook');
 Route::get('/book/delete/{id}',[BookController::class,'deleteBook'])->name('deleteBook');
 Route::get('/book/detail/{id}',[BookController::class,'details'])->name('detailBook');
+
+
+
+
+
+
+
+//fewegr
+Route::get('/book/detail/delete/{id}',[BookController::class,'deleteapply'])->name('deleteapply');
+
+
+
+
+ Route::get('/book/detail/approve/{id}',[BookController::class,'apply_approve'])->name('admin.book.approve');
+    Route::get('/book/detail/cancel/{id}',[BookController::class,'apply_cancel'])->name('admin.book.cancel');
 
 
 //Notice
@@ -148,7 +172,6 @@ Route::get('/donar/list',[MDHController::class,'donarList'])->name('admin.donar.
 
 
 });
-});
 
 
 
@@ -162,12 +185,11 @@ Route::get('/donar/list',[MDHController::class,'donarList'])->name('admin.donar.
 
 Route::post('/registration',[UserController::class,'registration'])->name('user.registration');
 Route::post('/login',[UserController::class,'login'])->name('user.login');
+
 Route::get('/', function () {
     return redirect()->route('user');
  });
-
 Route::get('/',[IndexController::class,'home'])->name('user');
-
 
 Route::group(['prefix'=>'user-portal','middleware'=>['user']],function(){
 
@@ -215,15 +237,19 @@ Route::post('/loan',[LoanController::class,'store'])->name('user.loan.store');
 
 Route::get('/abook',[ABookController::class,'book'])->name('user.abook');
 Route::post('/abook',[ABookController::class,'store'])->name('user.abook.store');
+Route::get('/abook/applybook',[ABookController::class,'applybook'])->name('user.applybook');
+Route::get('/abook/view/{id}',[ABookController::class,'view'])->name('user.view');
 
 
 Route::get('/apply-details',[HomeController::class,'ourWork'])->name('user.ourWork');
 
 Route::get('/ourWork/bookSector',[HomeController::class,'bookSector'])->name('user.bookSector');
+Route::get('/ourWork/bookSector/{file}',[HomeController::class,'download'])->name('user.download');
 
 Route::get('/ourWork/donationSector',[HomeController::class,'donationSector'])->name('user.donationSector');
 
 Route::get('/ourWork/loanSector',[HomeController::class,'loanSector'])->name('user.loanSector');
+
 
 
 

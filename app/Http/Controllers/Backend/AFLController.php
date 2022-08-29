@@ -13,4 +13,34 @@ class AFLController extends Controller
         $loans=Loan::all();
         return view('admin.layouts.afloan',compact('loans'));
     }
+
+
+     public function deleteapply($id)
+    {
+        // dd($id);
+
+        $apply_delete = Loan::find($id);
+        $apply_delete->delete();
+        return redirect()->route('admin.loan')->with('success', 'Book deleted successfully');
+    }
+
+
+
+
+  public function apply_approve($id)
+      {
+         $data=Loan::find($id);
+         $data->status='Approve';
+         $data->save();
+         return redirect()->back()->with('success','Apply approve successful');
+     }
+
+      public function apply_cancel($id)
+      {
+         $data=Loan::find($id);
+         $data->status='Reject';
+         $data->save();
+         return redirect()->back()->with('success','Apply Reject!!');
+     }
+      
 }

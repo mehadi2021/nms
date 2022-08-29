@@ -1,3 +1,5 @@
+@extends('frontend.index')
+@section('content')
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -47,33 +49,40 @@
       <th scope="col">Writer</th>
      <th scope="col">Category</th>
     <th scope="col">Price</th>
+      <th scope="col">download</th>
          </tr>
   </thead>
-  @php
+  {{-- @php
       $total = 0;
-  @endphp
+  @endphp --}}
   <tbody>
 
         @foreach ($books as $key=>$book)
         <tr>
         <th >{{$key+1}}</th>
-        <td>{{$book->book_name}}</td>
+        <td>{{$book->booklist->book_name}}</td>
         <td>{{$book->writer}}</td>
-        <td>{{$book->category}}</td>
-        <td>{{$book->price}}</td>
+        <td>{{$book->booklist->category}}</td>
+        <td>{{$book->booklist->price}}</td>
+        @if($book->status=='Approve')
+        <td><a href="{{route('user.download',$book->booklist->file) }}">Download</a></td>
+        @else
+        <td>
+        Please Payment</td>
+        @endif
         </tr>
-
+{{--
         @php
         $total = $total + $book->price;
-    @endphp
+    @endphp --}}
 
     @endforeach
 
 
-    <tr>
+    {{-- <tr>
         <td colspan="4">Total:</td>
         <td>{{$total}} tk.</td>
-    </tr>
+    </tr> --}}
   </tbody>
 </table>
 
@@ -100,3 +109,4 @@
 
   </body>
   </html>
+@endsection

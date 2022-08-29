@@ -1,3 +1,5 @@
+@extends('frontend.index')
+@section('content')
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -50,35 +52,55 @@
 
               @csrf
 
-
-                <input type="text"  class="form-control mb-3" id="name" name="name" placeholder="Name">
+ <label for="exampleFormControlSelect1">Name</label>
+                <input type="text"  class="form-control mb-3" id="name" name="name" value="{{ auth()->user()->name
+                 }}">
+                  <label for="exampleFormControlSelect1">Email</label>
             <input type="email" class="form-control mb-3" id="mail" name="email" placeholder="Email">
             {{-- <input type="text" class="form-control mb-3" id="subject" name="book_name" placeholder="Book_Name"> --}}
-              <div class="form-group">
+             <div class="form-group">
                 <label for="exampleFormControlSelect1">Book Name</label>
 
-                <select name="book_name" class="form-control mb-3" id="exampleFormControlSelect1">
-                     <option value="NULL">Select form here</option>
-                        @foreach ($books as $book)
-                  <option value="{{ $book->book_name }}">{{ $book->writer }}</option>
-                          @endforeach
+ <select name="booklist_id" class="form-control" id="exampleFormControlSelect1">
+         <option value="">select option</option>
+      @foreach ($book as $books )
+
+                  <option value="{{$books->id}}">{{$books->book_name}}</option>
+                   @endforeach
                 </select>
 
               </div>
+
 
 
             {{-- <input type="text" class="form-control mb-3" id="subject" name="writer" placeholder="Writer"> --}}
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Writer Name</label>
 
-                <select name="writer" class="form-control" id="exampleFormControlSelect1">
-                     <option value="NULL">Select form here</option>
-                        @foreach ($books as $book)
-                  <option value="{{ $book->writer }}">{{ $book->writer }}</option>
-                          @endforeach
+<select name="writer" class="form-control" id="exampleFormControlSelect1">
+     <option value="">select option</option>
+    @foreach ($book as $books )
+
+                  <option value="{{ $books->writer }}">{{ $books->writer }}</option>
+
+                  @endforeach
                 </select>
 
               </div>
+                <div class="form-group">
+                <label for="exampleFormControlSelect1">Payment Method</label>
+ <select name="method" class="form-control" id="exampleFormControlSelect1">
+                  <option>bKash</option>
+                  <option>Rocket</option>
+                  <option>MCash</option>
+                  <option>OK_Wallet</option>
+                  <option>SureCash</option>
+                </select>
+              </div>
+               <div class="form-group">
+                <label for="exampleFormControlSelect1">Transaction NUmber</label>
+                 <input type="text" name="transaction" class="form-control mb-3" id="subject"  placeholder="Transaction Number">
+               </div>
 
 
             <button type="submit" value="send" class="btn btn-primary">Submit</button>
@@ -113,5 +135,6 @@
 
                         </body>
                         </html>
+                        @endsection
 
 

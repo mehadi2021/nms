@@ -34,22 +34,60 @@
 
 </head>
 
-<!-- about -->
+
+<!-- scholarship -->
 <section class="section">
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <img class="img-fluid w-100 mb-4" src="{{url('frontend/images/about/about-page.jpg')}}" alt="about image">
-          <h2 class="section-title">ABOUT OUR JOURNY</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ipsa illo quod veritatis, magni debitis fugiat dolore voluptates! Consequatur, aliquid. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat perferendis sint optio similique. Et amet magni facilis vero corporis quos.</p>
-          <p>exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum a, facere fugit error accusamus est officiis vero in, nostrum laboriosam corrupti explicabo, cumque repudiandae deleniti perspiciatis quae consectetur enim. Laboriosam!</p>
+      <div class="row mb-5">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <img class="img-fluid" src="{{url('frontend/images/scholarship/scholarship.jpg')}}" alt="scholarship news">
         </div>
+        <div class="col-md-8">
+          <h2 style="margin-left:190px;">Apply Book</h2>
+          <strong class="mb-4 d-block"><i>
+
+
+
+
+
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <!-- scholarship item -->
+
+  @foreach ($books as $m)
+
+        <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
+            <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0">
+
+                <span class="h3 d-block"><a href="{{route('user.view',$m->id) }}">view</a></span>
+            <h5>Book name:{{$m->book_name}}</h5>
+            <h4>Category:{{$m->category}}</h4>
+            <h4>Writer:{{$m->writer}}</h4></div>
+
+
+            <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
+              <a href="notice-single.html" class="h4 mb-3 d-block">
+
+              </a>
+              <p class="mb-0">
+
+
+              </p>
+
+            </div>
+            <div class="d-md-table-cell text-right pr-0 pr-md-4"><a href="{{ route('user.abook',$m->id) }}" class="btn btn-primary">Apply Now</a></div>
+          </li>
+  @endforeach
+        <!-- scholarship item -->
+
+
+
       </div>
     </div>
   </section>
-  <!-- /about -->
-
-
+  <!-- /scholarship -->
 
   <script src="{{url('/frontend/plugins/jQuery/jquery.min.js')}}"></script>
   <!-- Bootstrap JS -->
@@ -71,4 +109,4 @@
 
   </body>
   </html>
-@endsection
+  @endsection

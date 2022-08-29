@@ -71,7 +71,7 @@
   <script src="{{url('assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
   <!-- Argon JS -->
   <script src="{{url('assets/js/argon.js?v=1.2.0')}}"></script>
+    @yield('scripts')
 </body>
 
 </html>
-</h1>

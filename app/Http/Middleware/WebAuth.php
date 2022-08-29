@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class CheckAdmin
+class WebAuth
 {
     /**
      * Handle an incoming request.
@@ -16,11 +16,11 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->role=='admin'){
+        if(auth()->user()){
             return $next($request);
         }else
         {
-            return redirect()->route('admin.login')->with('error','Permission Denied.');
+            return redirect()->back()->with('error','Permission Denied.');
         }
 
     }

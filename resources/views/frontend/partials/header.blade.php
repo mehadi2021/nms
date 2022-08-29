@@ -9,25 +9,28 @@
 
             </ul>
           </div>
-                  @if(auth()->user())
           <div class="col-lg-8 text-center text-lg-right">
             <ul class="list-inline">
 
               <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{route('user.notice')}}">notice</a></li>
              {{-- <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{route('user.sshipview')}}">SCHOLARSHIP VIEW</a></li> --}}
+             @if(auth()->user())
                <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="">{{ auth()->user()->name }}</a></li>
                <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{route('user.profile',auth()->User()->id)}}">Profile</a>
+               </li>
                  <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{{route('user.logout')}}">Logout</a></li>
               @else
               <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#login">login</a></li>
               <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#registration">register</a></li>
+              @endif
             </ul>
-                  @endif
+
           </div>
 
         </div>
       </div>
     </div>
+
 
     <!-- navbar -->
     <div class="navigation w-100">
@@ -63,6 +66,7 @@
           </div>
         </nav>
       </div>
+
 
     </div>
 

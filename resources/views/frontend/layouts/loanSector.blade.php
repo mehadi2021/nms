@@ -1,4 +1,4 @@
-@<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zxx">
 
 <head>
@@ -47,6 +47,7 @@
       <th scope="col">N_ID</th>
       <th scope="col">Department</th>
       <th scope="col">Amount</th>
+      <th scope="col">Status</th>
 
          </tr>
   </thead>
@@ -62,6 +63,7 @@
         <td>{{$loan->nid_no}}</td>
         <td>{{$loan->department}}</td>
         <td>{{$loan->amount}}</td>
+        <td>{{$loan->status}}</td>
         </tr>
 
         @php
